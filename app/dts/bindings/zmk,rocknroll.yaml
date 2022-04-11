@@ -1,0 +1,19 @@
+description: Support for two-key rock and roll inputs
+
+compatible: "zmk,rocknroll"
+
+properties:
+  key-positions:
+    type: array
+    required: true
+
+child-binding:
+  description: Layer bindings
+
+  properties:
+    label:
+      type: string
+      required: false
+    bindings:
+      type: phandle-array
+      required: true

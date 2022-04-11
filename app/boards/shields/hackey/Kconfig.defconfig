@@ -1,0 +1,6 @@
+if SHIELD_HACKEY
+
+config ZMK_KEYBOARD_NAME
+    default "HacKey"
+
+endif
