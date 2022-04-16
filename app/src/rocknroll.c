@@ -37,10 +37,14 @@ static struct {
     int key1;
     int key2;
     int num_pressed;
+    bool begin_bypass;
+    bool bypass_active;
 } state = {
     .key1 = -1,
     .key2 = -1,
     .num_pressed = 0,
+    .begin_bypass = false,
+    .bypass_active = false,
 };
 
 static int permutation_id(int32_t key1, int32_t key2) {
@@ -92,16 +96,32 @@ static int rocknroll_listener(const zmk_event_t *ev) {
 
     if (data->state) { // keydown
         state.num_pressed += 1;
+        if (state.bypass_active) {
+            return ZMK_EV_EVENT_BUBBLE;
+        }
+
         if (state.num_pressed == 1) {
             state.key1 = key_idx;
         } else if (state.num_pressed == 2 && state.key1 >= 0) {
             state.key2 = key_idx;
         } else {
+            if (state.num_pressed == ZMK_KEY_POSITIONS_LEN) {
+                state.begin_bypass = true;
+            }
             state.key1 = -1;
             state.key2 = -1;
         }
     } else { // keyup
         state.num_pressed -= 1;
+        if (state.bypass_active) {
+            state.bypass_active = (state.num_pressed > 0);
+            return ZMK_EV_EVENT_BUBBLE;
+        }
+        if (state.begin_bypass && state.num_pressed == 0) {
+            state.begin_bypass = false;
+            state.bypass_active = true;
+        }
+
         uint8_t layer = zmk_keymap_highest_layer_active();
         if (state.key1 == key_idx) { // Roll or Single Key
             int b = behavior_index(state.key1, state.key2, ROLL);

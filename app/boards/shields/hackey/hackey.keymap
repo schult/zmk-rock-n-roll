@@ -1,3 +1,4 @@
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <behaviors.dtsi>
 
@@ -8,65 +9,65 @@
 
         default_layer {
             bindings = <
-                /* Roll-fwd Roll-back Rock-fwd Rock-back */
-                &kp SPACE &none &none &none /* 0-NONE */
-                &kp A &none &none &none /* 1-NONE */
-                &kp O &kp L &kp M &kp N /* 1-0 */
-                &kp E &none &none &none /* 2-NONE */
-                &kp Y &kp I &kp R &kp P /* 2-0 */
-                &kp T &kp H &kp S &kp F /* 2-1 */
-                &kp BACKSPACE &none &none &none /* 3-NONE */
-                &kp U &kp W &kp B &kp J /* 3-0 */
-                &kp D &kp C &kp K &kp G /* 3-1 */
-                &kp Q &kp V &kp Z &kp X /* 3-2 */
+                /* Roll-fwd  Roll-back  Rock-fwd  Rock-back */
+                /* 0-x */ &kp SPACE &none &none &none
+                /* 1-x */ &kp A &none &none &none
+                /* 1-0 */ &kp O &kp L &kp M &kp N
+                /* 2-x */ &kp E &none &none &none
+                /* 2-0 */ &kp Y &kp I &kp R &kp P
+                /* 2-1 */ &kp T &kp H &kp S &kp F
+                /* 3-x */ &kp BACKSPACE &none &none &none
+                /* 3-0 */ &kp U &kp W &kp B &kp J
+                /* 3-1 */ &kp D &kp C &kp K &kp G
+                /* 3-2 */ &kp Q &kp V &kp Z &kp X
             >;
         };
 
         shift_layer {
             bindings = <
-                /* Roll-fwd Roll-back Rock-fwd Rock-back */
-                &kp LS(SPACE) &none &none &none /* 0-NONE */
-                &kp LS(A) &none &none &none /* 1-NONE */
-                &kp LS(O) &kp LS(L) &kp LS(M) &kp LS(N) /* 1-0 */
-                &kp LS(E) &none &none &none /* 2-NONE */
-                &kp LS(Y) &kp LS(I) &kp LS(R) &kp LS(P) /* 2-0 */
-                &kp LS(T) &kp LS(H) &kp LS(S) &kp LS(F) /* 2-1 */
-                &kp LS(BACKSPACE) &none &none &none /* 3-NONE */
-                &kp LS(U) &kp LS(W) &kp LS(B) &kp LS(J) /* 3-0 */
-                &kp LS(D) &kp LS(C) &kp LS(K) &kp LS(G) /* 3-1 */
-                &kp LS(Q) &kp LS(V) &kp LS(Z) &kp LS(X) /* 3-2 */
+                /* Roll-fwd  Roll-back  Rock-fwd  Rock-back */
+                /* 0-x */ &kp LS(SPACE) &none &none &none
+                /* 1-x */ &kp LS(A) &none &none &none
+                /* 1-0 */ &kp LS(O) &kp LS(L) &kp LS(M) &kp LS(N)
+                /* 2-x */ &kp LS(E) &none &none &none
+                /* 2-0 */ &kp LS(Y) &kp LS(I) &kp LS(R) &kp LS(P)
+                /* 2-1 */ &kp LS(T) &kp LS(H) &kp LS(S) &kp LS(F)
+                /* 3-x */ &kp LS(BACKSPACE) &none &none &none
+                /* 3-0 */ &kp LS(U) &kp LS(W) &kp LS(B) &kp LS(J)
+                /* 3-1 */ &kp LS(D) &kp LS(C) &kp LS(K) &kp LS(G)
+                /* 3-2 */ &kp LS(Q) &kp LS(V) &kp LS(Z) &kp LS(X)
             >;
         };
 
         symbol_layer {
             bindings = <
-                /* Roll-fwd Roll-back Rock-fwd Rock-back */
-                &kp TAB &none &none &none /* 0-NONE */
-                &kp ENTER &none &none &none /* 1-NONE */
-                &kp N2 &kp N1 &kp EQUAL &kp MINUS /* 1-0 */
-                &sk LEFT_CONTROL &none &none &none /* 2-NONE */
-                &kp N4 &kp N3 &kp BACKSLASH &kp SLASH /* 2-0 */
-                &kp N6 &kp N5 &kp PERIOD &kp COMMA /* 2-1 */
-                &kp DELETE &none &none &none /* 3-NONE */
-                &kp N0 &kp N9 &kp RIGHT_BRACKET &kp LEFT_BRACKET /* 3-0 */
-                &kp N8 &kp N7 &kp GRAVE &kp SINGLE_QUOTE /* 3-1 */
-                &kp LEFT_ARROW &kp RIGHT_ARROW &kp ESCAPE &kp SEMICOLON /* 3-2 */
+                /* Roll-fwd  Roll-back  Rock-fwd  Rock-back */
+                /* 0-x */ &kp TAB &none &none &none
+                /* 1-x */ &kp ENTER &none &none &none
+                /* 1-0 */ &kp N2 &kp N1 &kp EQUAL &kp MINUS
+                /* 2-x */ &sk LEFT_CONTROL &none &none &none
+                /* 2-0 */ &kp N4 &kp N3 &kp BACKSLASH &kp SLASH
+                /* 2-1 */ &kp N6 &kp N5 &kp PERIOD &kp COMMA
+                /* 3-x */ &kp DELETE &none &none &none
+                /* 3-0 */ &kp N0 &kp N9 &kp RIGHT_BRACKET &kp LEFT_BRACKET
+                /* 3-1 */ &kp N8 &kp N7 &kp GRAVE &kp SINGLE_QUOTE
+                /* 3-2 */ &kp LEFT_ARROW &kp RIGHT_ARROW &kp ESCAPE &kp SEMICOLON
             >;
         };
 
         shift_symbol_layer {
             bindings = <
-                /* Roll-fwd Roll-back Rock-fwd Rock-back */
-                &kp LS(TAB) &none &none &none /* 0-NONE */
-                &kp LS(ENTER) &none &none &none /* 1-NONE */
-                &kp LS(N2) &kp LS(N1) &kp LS(EQUAL) &kp LS(MINUS) /* 1-0 */
-                &sk LEFT_META &none &none &none /* 2-NONE */
-                &kp LS(N4) &kp LS(N3) &kp LS(BACKSLASH) &kp LS(SLASH) /* 2-0 */
-                &kp LS(N6) &kp LS(N5) &kp LS(PERIOD) &kp LS(COMMA) /* 2-1 */
-                &kp LS(DELETE) &none &none &none /* 3-NONE */
-                &kp LS(N0) &kp LS(N9) &kp LS(RIGHT_BRACKET) &kp LS(LEFT_BRACKET) /* 3-0 */
-                &kp LS(N8) &kp LS(N7) &kp LS(GRAVE) &kp LS(SINGLE_QUOTE) /* 3-1 */
-                &kp UP_ARROW &kp DOWN_ARROW &sk LEFT_ALT &kp LS(SEMICOLON) /* 3-2 */
+                /* Roll-fwd  Roll-back  Rock-fwd  Rock-back */
+                /* 0-x */ &kp LS(TAB) &none &none &none
+                /* 1-x */ &kp LS(ENTER) &none &none &none
+                /* 1-0 */ &kp LS(N2) &kp LS(N1) &kp LS(EQUAL) &kp LS(MINUS)
+                /* 2-x */ &sk LEFT_META &none &none &none
+                /* 2-0 */ &kp LS(N4) &kp LS(N3) &kp LS(BACKSLASH) &kp LS(SLASH)
+                /* 2-1 */ &kp LS(N6) &kp LS(N5) &kp LS(PERIOD) &kp LS(COMMA)
+                /* 3-x */ &kp LS(DELETE) &none &none &none
+                /* 3-0 */ &kp LS(N0) &kp LS(N9) &kp LS(RIGHT_BRACKET) &kp LS(LEFT_BRACKET)
+                /* 3-1 */ &kp LS(N8) &kp LS(N7) &kp LS(GRAVE) &kp LS(SINGLE_QUOTE)
+                /* 3-2 */ &kp UP_ARROW &kp DOWN_ARROW &sk LEFT_ALT &kp LS(SEMICOLON)
             >;
         };
 	};
@@ -75,7 +76,7 @@
 		compatible = "zmk,keymap";
 
 		default_layer {
-			bindings = < &mo 1 &mo 2 &none &none &none &none >;
+			bindings = < &mo 1 &mo 2 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 >;
 		};
 
         shift_layer {
@@ -87,7 +88,7 @@
         };
 
         shift_symbol_layer {
-            bindings = < &trans &trans &trans &trans &trans &trans >;
+            bindings = < &trans &trans &bt BT_CLR &none &none &none >;
         };
 	};
 

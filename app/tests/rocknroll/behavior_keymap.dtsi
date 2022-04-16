@@ -5,29 +5,21 @@
 / {
 	rocknroll {
 		compatible = "zmk,rocknroll";
-		key-positions = <1 2 3>;
+		key-positions = <0 1 2 3>;
 
         default_layer {
             bindings = <
-                /* Roll-fwd Roll-back Rock-fwd Rock-back */
-                &kp A &none &none &none /* 0-NONE */
-                &kp B &none &none &none /* 1-NONE */
-                &kp C &kp D &kp E &kp F /* 1-0 */
-                &kp G &none &none &none /* 2-NONE */
-                &kp H &kp I &kp J &kp K /* 2-0 */
-                &kp L &kp M &kp N &kp O /* 2-1 */
-            >;
-        };
-
-        second_layer {
-            bindings = <
-                /* Roll-fwd Roll-back Rock-fwd Rock-back */
-                &kp P &none &none &none /* 0-NONE */
-                &kp Q &none &none &none /* 1-NONE */
-                &kp R &kp S &kp T &kp U /* 1-0 */
-                &kp V &none &none &none /* 2-NONE */
-                &kp W &kp X &kp Y &kp Z /* 2-0 */
-                &kp F1 &kp F2 &kp F3 &kp F4 /* 2-1 */
+                /* Roll-fwd  Roll-back  Rock-fwd  Rock-back */
+                /* 0-x */ &kp A &none &none &none
+                /* 1-x */ &kp B &none &none &none
+                /* 1-0 */ &kp C &kp D &kp E &kp F
+                /* 2-x */ &kp G &none &none &none
+                /* 2-0 */ &kp H &kp I &kp J &kp K
+                /* 2-1 */ &kp L &kp M &kp N &kp O
+                /* 3-x */ &kp P &none &none &none
+                /* 3-0 */ &kp Q &kp R &kp S &kp T
+                /* 3-1 */ &kp U &kp V &kp W &kp X
+                /* 3-2 */ &kp Y &kp Z &kp SPACE &kp ENTER
             >;
         };
 	};
@@ -37,16 +29,9 @@
 
 		default_layer {
 			bindings = <
-				&sl 1 &kp N1
-                &kp N2 &kp N3
+				&sl N1 &kp N2
+                &kp N3 &kp N4
 			>;
 		};
-
-        second_layer {
-            bindings = <
-                &trans &trans
-                &trans &trans
-            >;
-        };
 	};
 };

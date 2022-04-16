@@ -1,4 +1,55 @@
-#include "../behavior_keymap.dtsi"
+#include <dt-bindings/zmk/keys.h>
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/kscan_mock.h>
+
+/ {
+	rocknroll {
+		compatible = "zmk,rocknroll";
+		key-positions = <1 2 3>;
+
+        default_layer {
+            bindings = <
+                /* Roll-fwd  Roll-back  Rock-fwd  Rock-back */
+                /* 0-x */ &kp A &none &none &none
+                /* 1-x */ &kp B &none &none &none
+                /* 1-0 */ &kp C &kp D &kp E &kp F
+                /* 2-x */ &kp G &none &none &none
+                /* 2-0 */ &kp H &kp I &kp J &kp K
+                /* 2-1 */ &kp L &kp M &kp N &kp O
+            >;
+        };
+
+        second_layer {
+            bindings = <
+                /* Roll-fwd  Roll-back  Rock-fwd  Rock-back */
+                /* 0-x */ &kp P &none &none &none
+                /* 1-x */ &kp Q &none &none &none
+                /* 1-0 */ &kp R &kp S &kp T &kp U
+                /* 2-x */ &kp V &none &none &none
+                /* 2-0 */ &kp W &kp X &kp Y &kp Z
+                /* 2-1 */ &kp F1 &kp F2 &kp F3 &kp F4
+            >;
+        };
+	};
+
+	keymap {
+		compatible = "zmk,keymap";
+
+		default_layer {
+			bindings = <
+				&sl 1 &kp N1
+                &kp N2 &kp N3
+			>;
+		};
+
+        second_layer {
+            bindings = <
+                &trans &trans
+                &trans &trans
+            >;
+        };
+	};
+};
 
 &kscan {
 	events = <
